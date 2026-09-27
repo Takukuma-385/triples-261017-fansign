@@ -74,7 +74,7 @@ def main():
         inv_prev = state.get(pid)
 
         if inv_prev is not None and inv_now != inv_prev:
-            diff = inv_now - inv_prev
+            diff = inv_prev - inv_now
             sign = f"+{diff}" if diff > 0 else str(diff)
             msg = f"❗️【銷量變動】\n活動：{name}\n時間：{now_str()}\n庫存：{inv_now} ({sign})"
             print(msg); send_dc(webhook, msg)
